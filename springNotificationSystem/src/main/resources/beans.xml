@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Eager Initialization (Default Singleton) -->
+    <bean id="emailBean"
+          class="com.example.demo.EmailNotification"
+          init-method="init"
+          destroy-method="destroy" />
+
+    <!-- Lazy Initialization -->
+    <bean id="smsBean"
+          class="com.example.demo.SmsNotification"
+          lazy-init="true" />
+
+</beans>
