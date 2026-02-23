@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 50px 80px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #333;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome 🚀</h1>
+        <p>This is my SpringBoot Project .</p>
+   <p><strong>ID:</strong> <span th:text="${user.id}"></span></p>
+
+    <p><strong>Name:</strong> <span th:text="${user.name}"></span></p>
+
+    <p><strong>City:</strong> <span th:text="${user.city}"></span></p>
+
+    </div>
+
+</body>
+</html>
