@@ -20,3 +20,5 @@ public class EmailNotification implements Notification {
         System.out.println("Email Notification sent: " + message);
     }
 }
+
+
