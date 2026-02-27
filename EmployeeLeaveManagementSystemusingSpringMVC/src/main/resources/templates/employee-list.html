@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employees</title>
+</head>
+<body>
+
+<h2>Employee List</h2>
+
+<a th:href="@{/employees/add}">Add Employee</a>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Joining Date</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="emp : ${employeeList}">
+        <td th:text="${emp.employeeId}"></td>
+        <td th:text="${emp.name}"></td>
+        <td th:text="${emp.email}"></td>
+        <td th:text="${emp.department}"></td>
+        <td th:text="${emp.joiningDate}"></td>
+        <td>
+            <a th:href="@{'/employees/edit/' + ${emp.employeeId}}">Edit</a>
+            <a th:href="@{'/employees/delete/' + ${emp.employeeId}}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<br>
+<a href="/leave-types">Leave Types</a> |
+<a href="/leaves">Leave Requests</a>
+
+</body>
+</html>

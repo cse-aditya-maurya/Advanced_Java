@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Leave Types</title>
+</head>
+<body>
+
+<h2>Leave Types</h2>
+
+<a href="/leave-types/add">Add Leave Type</a>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Max Days</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="type : ${leaveTypes}">
+        <td th:text="${type.leaveTypeId}"></td>
+        <td th:text="${type.leaveName}"></td>
+        <td th:text="${type.maxDaysAllowed}"></td>
+        <td>
+            <a th:href="@{/leave-types/delete/{id}(id=${type.leaveTypeId})}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

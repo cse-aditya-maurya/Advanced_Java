@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Apply Leave</title>
+</head>
+<body>
+
+<h2>Apply Leave</h2>
+
+<form th:action="@{/leaves/save}" th:object="${leaveRequest}" method="post">
+
+    <!-- Employee -->
+    <label>Employee:</label>
+    <select th:field="*{employee.employeeId}" required>
+        <option value="">--Select Employee--</option>
+        <option th:each="emp : ${employeeList}"
+                th:value="${emp.employeeId}"
+                th:text="${emp.name}">
+        </option>
+    </select>
+    <br><br>
+
+    <!-- Leave Type -->
+    <label>Leave Type:</label>
+    <select th:field="*{leaveType.leaveTypeId}" required>
+        <option value="">--Select Leave Type--</option>
+        <option th:each="type : ${leaveTypeList}"
+                th:value="${type.leaveTypeId}"
+                th:text="${type.leaveName}">
+        </option>
+    </select>
+    <br><br>
+
+    <!-- Start Date -->
+    <label>Start Date:</label>
+    <input type="date" th:field="*{startDate}" required />
+    <br><br>
+
+    <!-- End Date -->
+    <label>End Date:</label>
+    <input type="date" th:field="*{endDate}" required />
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>

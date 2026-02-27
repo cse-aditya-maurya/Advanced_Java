@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Leave Requests</title>
+</head>
+<body>
+
+<h2>Leave Request List</h2>
+
+<a th:href="@{/leaves/add}">Apply Leave</a>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Employee</th>
+        <th>Leave Type</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="leave : ${leaveList}">
+        <td th:text="${leave.requestId}"></td>
+        <td th:text="${leave.employee.name}"></td>
+        <td th:text="${leave.leaveType.leaveName}"></td>
+        <td th:text="${leave.startDate}"></td>
+        <td th:text="${leave.endDate}"></td>
+        <td th:text="${leave.status}"></td>
+        <td>
+            <a th:href="@{'/leaves/approve/' + ${leave.requestId}}">Approve</a>
+            <a th:href="@{'/leaves/reject/' + ${leave.requestId}}">Reject</a>
+            <a th:href="@{'/leaves/delete/' + ${leave.requestId}}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<br>
+<a href="/employees">Employees</a> |
+<a href="/leave-types">Leave Types</a>
+
+</body>
+</html>
