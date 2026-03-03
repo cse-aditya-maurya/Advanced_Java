@@ -26,11 +26,11 @@ public class User {
     @Column(nullable = false)
     private Integer age;
 
-    // ===== Default Constructor (Required by JPA) =====
+  
     public User() {
     }
 
-    // ===== Parameterized Constructor =====
+   
     public User(Long id, String fullName, String email, String password, Role role, Integer age) {
         this.id = id;
         this.fullName = fullName;
@@ -40,7 +40,7 @@ public class User {
         this.age = age;
     }
 
-    // ===== Getters =====
+   
 
     public Long getId() {
         return id;
@@ -92,7 +92,7 @@ public class User {
         this.age = age;
     }
 
-    // ===== toString() (Password excluded for security) =====
+  
 
     @Override
     public String toString() {

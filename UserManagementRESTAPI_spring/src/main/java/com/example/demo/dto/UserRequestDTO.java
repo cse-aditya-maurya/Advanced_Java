@@ -24,7 +24,7 @@ public class UserRequestDTO {
     @Max(value = 60, message = "Age must not be greater than 60")
     private Integer age;
 
-    // ===== Getters and Setters =====
+  
 
     public String getFullName() {
         return fullName;
@@ -46,7 +46,7 @@ public class UserRequestDTO {
         return password;
     }
 
-    // Password setter
+   
     public void setPassword(String password) {
         this.password = password;
     }

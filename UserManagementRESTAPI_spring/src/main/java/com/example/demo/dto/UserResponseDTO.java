@@ -8,7 +8,7 @@ public class UserResponseDTO {
     private String role;
     private Integer age;
 
-    // ===== Getters and Setters =====
+   
 
     public Long getId() {
         return id;
